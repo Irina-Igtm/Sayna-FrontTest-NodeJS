@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const apiResponse = require("../helpers/apiResponse");
 const verifyToken = (req, res, next) => {
     console.log(req.body);
     const bearerHeader = req.headers["authorization"];
@@ -13,7 +14,7 @@ const verifyToken = (req, res, next) => {
   
     } else {
   
-      res.sendStatus(403);
+      return apiResponse.TokenErrone(res,"Votre token n'est pas correct")
   
     }
 };

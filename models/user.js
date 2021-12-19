@@ -20,9 +20,9 @@ var UserSchema = new mongoose.Schema({
         type: String, required: true
     },
     subcription: {
-        type: [String],
+        type: String,
         required: false,
-        defaultValue: []
+
     },
     role: {
                     type: String,

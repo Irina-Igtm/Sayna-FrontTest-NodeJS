@@ -10,7 +10,7 @@ var cors = require("cors");
 
 
 // DB connection
-var MONGODB_URL = "mongodb://localhost:27017/base_test";
+var MONGODB_URL = "mongodb+srv://SitrakaL:bohemianrhapsody12@saynabackapi.ae1b1.mongodb.net/test";
 var mongoose = require("mongoose");
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
 	//don't show the log when it is test
@@ -31,10 +31,11 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, 'frontSayna')));
 
 //To allow cross-origin requests
 app.use(cors());
+// app.use(express.static(_dirname + '/frontSayna'))
 
 //Route Prefixes
 app.use("/", indexRouter);
